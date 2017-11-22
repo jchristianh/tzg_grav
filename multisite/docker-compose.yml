@@ -1,0 +1,51 @@
+version: '2'
+
+services:
+  tzg_grav_site1:
+    container_name: ${CNAME}_site1
+    restart: ${CRESTART}
+    image: ${CIMG}:${CTAG}
+    build: .
+    command: ${CINIT}
+    networks:
+      - tzg_grav
+    ports:
+      - '80'
+    volumes:
+      - tzg_grav_site1:/var/www/localhost/htdocs
+
+  tzg_grav_site2:
+    container_name: ${CNAME}_site2
+    restart: ${CRESTART}
+    image: ${CIMG}:${CTAG}
+    build: .
+    command: ${CINIT}
+    networks:
+      - tzg_grav
+    ports:
+      - '80'
+    volumes:
+      - tzg_grav_site2:/var/www/localhost/htdocs
+
+
+  tzg_grav_site3:
+    container_name: ${CNAME}_site3
+    restart: ${CRESTART}
+    image: ${CIMG}:${CTAG}
+    build: .
+    command: ${CINIT}
+    networks:
+      - tzg_grav
+    ports:
+      - '80'
+    volumes:
+      - tzg_grav_site3:/var/www/localhost/htdocs
+
+
+networks:
+  tzg_grav:
+
+volumes:
+  tzg_grav_site1:
+  tzg_grav_site2:
+  tzg_grav_site3:

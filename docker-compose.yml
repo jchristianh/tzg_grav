@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  tzg_grav:
+    container_name: ${CNAME}
+    restart: ${CRESTART}
+    image: ${CIMG}:${CTAG}
+    build: .
+    command: ${CINIT}
+    networks:
+      - tzg_grav
+    ports:
+      - '8000:80'
+    volumes:
+      - tzg_grav:/var/www/localhost/htdocs
+
+networks:
+  tzg_grav:
+
+volumes:
+  tzg_grav:
