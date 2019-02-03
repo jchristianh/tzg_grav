@@ -5,6 +5,11 @@
 # Chris H. <chris@thezengarden.net>
 ###################################
 
+
+# use variable for grav ver
+# for easier updates
+GRAV_VER="1.5.7"
+
 # ssl is causing an error, so for now
 # lets dump it:
 if [ -f '/etc/apache2/conf.d/ssl.conf' ]
@@ -21,8 +26,8 @@ fi
 if ! [ -f '/var/www/localhost/htdocs/index.php' ]
 then
   cd /var/www/localhost
-  wget 'https://getgrav.org/download/core/grav-admin/1.3.8'
-  unzip 1.3.8
+  wget "https://getgrav.org/download/core/grav-admin/${GRAV_VER}"
+  unzip ${GRAV_VER}
   rm -rfv htdocs/*
   mv grav-admin/* htdocs
   mv grav-admin/.htaccess htdocs

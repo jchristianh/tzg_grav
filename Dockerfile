@@ -1,6 +1,6 @@
 ##################################
 # The Zen Garden :: Grav CMS     #
-#     Build Tag: 171122-1207     #
+#  Build Tag: 190203-174558      #
 ##################################
 FROM alpine:latest
 MAINTAINER Chris Hammer <chris@thezengarden.net>

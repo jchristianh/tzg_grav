@@ -7,4 +7,4 @@
 
 . .env
 
-docker build -t docker.thezengarden.net/grav:dev .
+docker build --no-cache -t docker.thezengarden.net/grav:dev .
